@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# Pull the image from Docker Hub
-docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
 docker pull amittz98/img-dev:latest
 
-# Stop and remove existing container if it exists
 docker stop dev-con || true
 docker rm dev-con || true
 
-# Run the new container
 docker run -d -p 5000:5000 --name dev-con amittz98/img-dev:latest
