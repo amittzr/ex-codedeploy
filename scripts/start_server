@@ -2,4 +2,7 @@
 
 docker pull amittz98/img-dev:latest
 
+docker stop dev-con || true
+docker rm dev-con || true
+
 docker run -d -p 5000:5000 --name dev-con amittz98/img-dev:latest
